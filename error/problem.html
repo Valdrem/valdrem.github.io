@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encountered a problem | Contact Support</title>
+    <link rel="icon" href="http://media.ripledd.com/media/ripledd/logos/ripledd-logo-sign-svg.svg">
+    <link rel="stylesheet" href="../assets/styles/checkmail.css?v=1">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Function to get URL parameter by name
+            const getUrlParameter = (name) => {
+                name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+                const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+                const results = regex.exec(location.search);
+                return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+            };
+
+            // Get the message parameter from the URL
+            const message = getUrlParameter('message');
+            // Find the <p> element and update its content
+            if (message) {
+                const messageParagraph = document.querySelector('.verification-message p');
+                messageParagraph.textContent = message;
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="verification-container">
+        <div class="verification-message">
+            <div class="ripledd_logo">
+                <img src="http://media.ripledd.com/media/ripledd/logos/ripledd-logo-sign-svg.svg">
+            </div>
+            <h2>Sorry, encountered a problem.</h2>
+            <p>Please try again or contact the support. We're truly sorry for this inconvenience.</p>
+            <a href="https://auth.ripledd.com/signup" class="login-btn" style="text-decoration: none; color: #fff; padding: 5px 20px;">Try Again</a>
+        </div>
+    </div>
+</body>
+</html>

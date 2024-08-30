@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Verified - Set Your Password</title>
+    <link rel="icon" href="http://media.ripledd.com/media/ripledd/logos/ripledd-logo-sign-svg.svg">
+    
+    <link rel="stylesheet" href="assets/styles/verify.css?v=3">
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-form">
+            <div class="ripledd_logo">
+                <svg class="ripledd_logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" width="496" viewBox="0 0 496 496" enable-background="new 0 0 496 496" xml:space="preserve" height="496">
+                    <path fill="#1e6993" opacity="1.000000" stroke="none" d=" M128.766998,388.412628   C85.896896,373.528564 55.640049,345.759491 38.542404,303.919495   C31.009552,285.485687 27.121469,266.300415 27.822659,246.469452   C29.846321,189.236420 63.425289,137.340485 118.827301,114.982544   C136.374557,107.901199 154.542984,104.249382 173.286087,104.214226   C200.294464,104.163567 225.651871,110.881516 248.585678,125.518944   C252.590103,128.074753 255.625305,128.188110 259.798065,125.559258   C281.695709,111.763771 305.819733,104.483330 331.601440,104.031746   C391.563080,102.981468 445.126587,136.358017 469.037720,194.017395   C477.507629,214.441727 479.618439,235.631577 478.785614,257.935394   C477.336182,296.753876 462.025635,328.588043 434.766388,354.844391   C403.827087,384.645355 366.114655,397.222137 323.335663,394.158691   C299.659546,392.463196 277.784790,384.900360 257.827545,372.045685   C255.399826,370.481934 253.862427,371.218567 252.025436,372.442078   C239.443359,380.822388 225.820770,386.841431 211.210541,390.723511   C183.627457,398.052582 156.286804,397.358612 128.766998,388.412628  M198.527145,295.796356   C190.077377,272.191071 189.364227,247.859512 193.147324,223.487808   C196.537796,201.645416 205.414688,181.765823 218.507538,163.849655   C222.667984,158.156525 222.606720,157.677551 216.204346,155.016022   C181.435287,140.562119 147.945877,142.971222 116.192139,163.435272   C75.908638,189.396408 59.111198,242.454697 76.281258,286.450256   C94.605133,333.402313 143.160202,362.537964 195.782150,351.559570   C205.176376,349.599701 214.248123,346.524323 222.963028,341.025848   C212.373611,327.169891 204.023636,312.675446 198.527145,295.796356  M230.772491,338.209198   C229.747040,339.241608 228.119522,339.682465 227.688980,341.265320   C227.987762,342.915436 229.238892,343.858368 230.203583,344.967285   C236.569824,352.285461 243.968689,358.462280 251.442108,364.607971   C255.178680,367.680695 257.856323,368.050751 261.760864,364.820984   C304.259735,329.667206 323.720764,285.013916 316.665375,229.938812   C311.595367,190.362076 292.161591,158.750122 260.753174,134.280441   C256.666779,131.096817 253.677078,131.041626 250.046722,134.648575   C247.344147,137.333725 244.059448,139.421799 241.175308,141.937790   C235.670944,146.739578 230.862061,152.152496 226.629669,158.623138   C259.193420,179.553955 277.566742,208.676483 278.502319,247.231155   C279.437744,285.780457 262.938019,315.880219 230.772491,338.209198  z"/>
+                </svg>
+            </div>
+            <h2>Email Verified</h2>
+            <p>Your email has been successfully verified. Please set your password to continue.</p>
+            <form id="passwordForm">
+                <div class="input-icon">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input type="password" name="password" id="password" placeholder="New Password" autocomplete="off">
+                </div>
+                <div id="password-checklist">
+                    <ul>
+                        <li id="lowercase"><ion-icon name="close-circle-outline" id="lowercase-icon"></ion-icon> Lowercase letter (a-z)</li>
+                        <li id="uppercase"><ion-icon name="close-circle-outline" id="uppercase-icon"></ion-icon> Uppercase letter (A-Z)</li>
+                        <li id="number"><ion-icon name="close-circle-outline" id="number-icon"></ion-icon> Number (0-9)</li>
+                        <li id="special"><ion-icon name="close-circle-outline" id="special-icon"></ion-icon> Special character (!@#$%^&*)</li>
+                        <li id="length"><ion-icon name="close-circle-outline" id="length-icon"></ion-icon> At least 8 characters</li>
+                    </ul>
+                </div>
+                <div id="password-match-message">
+                    Passwords do not match!
+                </div>
+                <div class="input-icon">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password" autocomplete="off" required>
+                </div>
+                <!-- Hidden input for the token -->
+                <input type="hidden" name="token" id="token" value="">
+                <button type="submit" class="signup-btn" id="submit-btn" disabled>Set Password</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            function getUrlParameter(name) {
+                name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+                var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+                var results = regex.exec(location.search);
+                return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+            }
+
+            var token = getUrlParameter('token');
+            $('#token').val(token);
+
+            function updateIcon(criteriaMet, iconId) {
+                var iconElement = $('#' + iconId);
+                if (criteriaMet) {
+                    iconElement.attr('name', 'checkmark-circle-outline').css('color', '#0FFF50');
+                } else {
+                    iconElement.attr('name', 'close-circle-outline').css('color', '#FF3131');
+                }
+            }
+
+            function validatePassword() {
+                var password = $('#password').val();
+                var confirmPassword = $('#confirmPassword').val();
+
+                var lowercaseMet = /[a-z]/.test(password);
+                updateIcon(lowercaseMet, 'lowercase-icon');
+
+                var uppercaseMet = /[A-Z]/.test(password);
+                updateIcon(uppercaseMet, 'uppercase-icon');
+
+                var numberMet = /\d/.test(password);
+                updateIcon(numberMet, 'number-icon');
+
+                var specialMet = /[!@#$%^&*]/.test(password);
+                updateIcon(specialMet, 'special-icon');
+
+                var lengthMet = password.length >= 8;
+                updateIcon(lengthMet, 'length-icon');
+
+                var passwordsMatch = password === confirmPassword;
+                if (passwordsMatch) {
+                    $('#password-match-message').hide();
+                } else {
+                    $('#password-match-message').show();
+                }
+
+                var allCriteriaMet = lowercaseMet && uppercaseMet && numberMet && specialMet && lengthMet && passwordsMatch;
+                $('#submit-btn').prop('disabled', !allCriteriaMet);
+            }
+
+            $('#password, #confirmPassword').on('input', validatePassword);
+
+            $('#passwordForm').on('submit', async function(event) {
+                event.preventDefault();
+
+                const password = $('#password').val();
+                const confirmPassword = $('#confirmPassword').val();
+                const token = $('#token').val();
+
+                if (password !== confirmPassword) {
+                    $('#password-match-message').show();
+                    return;
+                }
+
+                const data = {
+                    password: password,
+                    confirmPassword: confirmPassword,
+                    token: token
+                };
+
+                try {
+                    const response = await fetch('https://api.ripledd.com/v1/auth/verify_and_set.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        },
+                        body: new URLSearchParams(data)
+                    });
+
+                    const result = await response.json();
+
+                    if (result.status === 'success') {
+                        if (result.token) {
+                            document.cookie = `token=${result.token}; path=/; max-age=${86400 * 365}; secure; samesite=strict; domain=.ripledd.com`;
+                        }
+
+                        window.location.href = 'https://ripledd.com';
+                    } else {
+                        window.location.href = '../error/problem?message=' + encodeURIComponent(result.message);
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    window.location.href = '../error/problem?message=' + encodeURIComponent('An error occurred. Please try again.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

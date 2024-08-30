@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #10A9FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.verification-container {
+    padding: 10px;
+}
+
+.verification-message {
+    border-radius: 10px;
+    padding: 20px;
+    width: 400px;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.ripledd_logo img {
+    width: 55px;
+    margin-bottom: 20px;
+}
+
+
+
+h2 {
+    color: #1e6993;
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #276b93;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.login-btn {
+    font-weight: bold;
+    background: #039ef5;
+    border-radius: 20px;
+    color: white;
+    border: none;
+    padding: 7px;
+    width: 100%;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    color: #ffffff;
+}
+
+@media (max-width: 800px) {
+    .verification-message {
+        width: 100%;
+    }
+}
